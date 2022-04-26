@@ -37,10 +37,10 @@ const PreviewLayout = ({
     selectedValue,
     setSelectedValue,
 }) => (
-    
+
     <View style={{ padding: 10, flex: 1 }}>
         <ScrollView horizontal={true} style={[styles.scrollview]}>
-        {values.map((value) => (
+            {values.map((value) => (
                 <TouchableOpacity
                     key={value}
                     onPress={() => setSelectedValue(value)}
@@ -59,7 +59,7 @@ const PreviewLayout = ({
                     </Text>
                 </TouchableOpacity>
             ))}
-    </ScrollView>
+        </ScrollView>
         <Text style={styles.label}>{label}</Text>
         <View style={styles.row}>
             {values.map((value) => (

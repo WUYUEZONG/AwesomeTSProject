@@ -31,9 +31,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import FlexDirectionBasics from './layoutdemo';
 
-const Section: React.FC<{
-  title: string;
-}> = ({ children, title }) => {
+const Section: React.FC<{ title: string;}> = ({ children, title }) => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
