@@ -29,6 +29,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import FlexDirectionBasics from './layoutdemo';
 
 const Section: React.FC<{
   title: string;
@@ -69,18 +70,14 @@ function MineScreen({ route, navigation }) {
 
 function DetailsScreen({ route, navigation }) {
   const { itemId, otherParam } = route.params;
-  return (<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <Text>DetailsScreen</Text>
-    <Text> the id is : {itemId}</Text>
-    <Text>{otherParam}</Text>
-  </View>);
+  return (<FlexDirectionBasics/>);
 }
 
 function HomeScreenPage({ navigation }) {
   return (<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
     <Text>Home Screen</Text>
     <Button
-      title="Go to Details"
+      title="Go to Details 1"
       onPress={() => navigation.push('Details', {
         itemId: 8,
         otherParam: 'tst params',
@@ -120,7 +117,6 @@ const App = () => {
         <Stack.Screen
           name="MineScreen"
           component={MineScreen}
-          options={({ route }) => ({ title: route.params.name })}
         />
       </Stack.Navigator>
 
